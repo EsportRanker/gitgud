@@ -1,0 +1,122 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "gameid": 2,
+      "name": "Astralis",
+      "nationality": "🇩🇰",
+      "rosterid": 1,
+      "image": "https://static.gosugamers.net/100x100/1d/e8/5f/11840e5c1eb26d336f2374f521edafb6f40172fd164f525b4c5fe2bb7f.png"
+    },
+    {
+      "id": 2,
+      "gameid": 1,
+      "name": "Fnatic",
+      "nationality": "🇪🇺",
+      "rosterid": 2,
+      "image": "https://static.gosugamers.net/100x100/a7/d1/00/c7fd9e5f680bd80369a06b68b2c56ff1172933cc3adec2bb78ade99261.png"
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "teamid": 1,
+      "gameid": 2,
+      "name": "dev1ce.",
+      "nationality": "🇩🇰"
+    },
+    {
+      "id": 2,
+      "teamid": 1,
+      "gameid": 2,
+      "name": "dupreeh",
+      "nationality": "🇩🇰"
+    },
+    {
+      "id": 3,
+      "teamid": 1,
+      "gameid": 2,
+      "name": "XYP9X",
+      "nationality": "🇩🇰"
+    },
+    {
+      "id": 4,
+      "teamid": 1,
+      "gameid": 2,
+      "name": "gla1ve",
+      "nationality": "🇩🇰"
+    },
+    {
+      "id": 5,
+      "teamid": 1,
+      "gameid": 2,
+      "name": "Magisk-",
+      "nationality": "🇩🇰"
+    },
+    {
+      "id": 6,
+      "teamid": 2,
+      "gameid": 1,
+      "name": "Rekkles.",
+      "nationality": "🇸🇪"
+    },
+    {
+      "id": 7,
+      "teamid": 2,
+      "gameid": 1,
+      "name": "broxah",
+      "nationality": "🇩🇰"
+    },
+    {
+      "id": 8,
+      "teamid": 2,
+      "gameid": 1,
+      "name": "Nemesis",
+      "nationality": "🇸🇮"
+    },
+    {
+      "id": 9,
+      "teamid": 2,
+      "gameid": 1,
+      "name": "bwipo",
+      "nationality": "🇧🇪"
+    },
+    {
+      "id": 10,
+      "teamid": 2,
+      "gameid": 1,
+      "name": "Hylissang",
+      "nationality": "🇧🇬"
+    },
+    {
+      "id": 11,
+      "teamid": 0,
+      "gameid": 3,
+      "name": "Eddie",
+      "nationality": "🇨🇦"
+    },
+    {
+      "name": "Artur",
+      "gameName": "league",
+      "teamName": "Astralis",
+      "id": 12
+    }
+  ],
+  "games": [
+    {
+      "name": "league",
+      "id": 1,
+      "genre": "moba"
+    },
+    {
+      "name": "cs:go",
+      "id": 2,
+      "genre": "fps"
+    },
+    {
+      "name": "hearthstone",
+      "id": 3,
+      "genre": "tcg"
+    }
+  ]
+}
