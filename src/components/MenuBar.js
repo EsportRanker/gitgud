@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 const BurgerMenu = styled.div`
   margin: 10px;
+
   width: 40px;
   height: 20px;
   cursor: pointer;
@@ -10,6 +11,7 @@ const BurgerMenu = styled.div`
 const Span = styled.span`
   display: block;
   height: 5px;
+
   width: 100%;
   background: #d3531a;
   border-radius: 9px;
@@ -34,7 +36,9 @@ const Menu = styled.div`
   position: absolute;
   background: #333;
   height: 100%;
+
   width: 30%;
+
   top: 0;
   right: 0;
   z-index: 9999;
@@ -49,13 +53,16 @@ const MenuContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
   margin-top: 18px;
+
 `;
 function MenuBar({ onClick }) {
   return (
     <Menu>
       <MenuContentContainer>
         <BurgerMenu onClick={() => onClick()}>
+
           <ExitSpan direction="left"></ExitSpan>
 
           <ExitSpan direction="right"></ExitSpan>
@@ -81,7 +88,8 @@ function MenuBar({ onClick }) {
   );
 }
 export default function HamburgerMenu() {
-  const [showMenu, setShowMenu] = React.useState(true);
+  const [showMenu, setShowMenu] = React.useState(false);
+
   function handleClick() {
     setShowMenu(!showMenu);
   }

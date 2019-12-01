@@ -14,6 +14,8 @@ const Card = styled.div`
   margin-top: 40px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px grey;
+  color: white;
+
 `;
 
 const CardHeader = styled.div`
@@ -76,7 +78,6 @@ export default function Cards({ nationality, image, rosterid }) {
     async function getPlayers() {
       const response = await fetch("http://localhost:3002/players");
       const data = await response.json();
-
       setPlayers(data);
     }
     getPlayers();
@@ -101,7 +102,9 @@ export default function Cards({ nationality, image, rosterid }) {
               />
             );
           } else {
+
             return "";
+
           }
         })}
       </RosterList>

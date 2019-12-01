@@ -1,5 +1,4 @@
 import React from "react";
-
 import Cards from "../components/Card";
 
 export default function Home() {
