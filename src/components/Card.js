@@ -14,6 +14,7 @@ const Card = styled.div`
   margin-top: 40px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px grey;
+  color: white;
 `;
 
 const CardHeader = styled.div`

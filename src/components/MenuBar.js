@@ -54,7 +54,7 @@ function MenuBar({ onClick }) {
   );
 }
 export default function HamburgerMenu() {
-  const [showMenu, setShowMenu] = React.useState(true);
+  const [showMenu, setShowMenu] = React.useState(false);
   function handleClick() {
     setShowMenu(!showMenu);
   }

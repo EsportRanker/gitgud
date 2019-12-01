@@ -11,21 +11,35 @@ const Input = styled.input`
 export default function Add() {
   const [name, setName] = React.useState("");
   const [gameName, setGameName] = React.useState("");
-  const [teamName, setTeamName] = React.useState("");
+  const [teamID, setTeamID] = React.useState(1);
+  const [teamName, setTeamName] = React.useState([]);
   async function handleSubmit(event) {
-    event.preventDefault();
     await fetch("http://localhost:3002/players", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name, gameName, teamName })
+      body: JSON.stringify({
+        teamid: parseInt(teamID),
+        gameid: 1,
+        name: name,
+        nationality: "german"
+      })
     });
     setName("");
     setGameName("");
     setTeamName("");
   }
 
+  React.useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("http://localhost:3002/teams");
+      const data = await response.json();
+      console.log(data);
+      setTeamName(data);
+    }
+    fetchData();
+  }, []);
   return (
     <Form onSubmit={handleSubmit}>
       <Input
@@ -42,13 +56,22 @@ export default function Add() {
         value={gameName}
         onChange={event => setGameName(event.target.value)}
       />
-      <Input
-        autoFocus
-        type="text"
-        placeholder="Team Name"
-        value={teamName}
-        onChange={event => setTeamName(event.target.value)}
-      />
+
+      <select
+        name="team"
+        size="1"
+        onChange={event => {
+          setTeamID(event.target.value);
+        }}
+      >
+        {teamName.map(teamData => {
+          return (
+            <option key={teamData.id} value={teamData.id}>
+              {teamData.name}
+            </option>
+          );
+        })}
+      </select>
       <button>Submit</button>
     </Form>
   );
