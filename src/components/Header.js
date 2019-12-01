@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import HamburgerMenu from "./MenuBar";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -15,23 +15,6 @@ const HeaderContainer = styled.header`
   font-size: 1.25rem;
   box-shadow: 0px 11px 59px -28px rgba(0, 0, 0, 0.75);
 `;
-
-// const BurgerMenu = styled.div`
-//   margin: 10px;
-//   width: 60px;
-//   height: 45px;
-//   cursor: pointer;
-// `;
-
-// const Span = styled.span`
-//   display: block;
-//   height: 9px;
-//   width: 100%;
-//   background: #d3531a;
-//   border-radius: 9px;
-//   opacity: 1;
-//   margin-bottom: 7px;
-// `;
 
 const AppTitle = styled.h1`
   margin: 10px;
@@ -50,8 +33,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <AppTitle>Git Gud</AppTitle>
-      <Link to="/">Home</Link>
-      <Link to="/add">Add</Link>
+      <HamburgerMenu />
     </HeaderContainer>
   );
 }

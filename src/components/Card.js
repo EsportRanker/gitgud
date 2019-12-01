@@ -94,8 +94,14 @@ export default function Cards({ nationality, image, rosterid }) {
         {players.map(player => {
           if (player.teamid === rosterid) {
             return (
-              <Roster name={player.name} nationality={player.nationality} />
+              <Roster
+                key={player.id}
+                name={player.name}
+                nationality={player.nationality}
+              />
             );
+          } else {
+            return;
           }
         })}
       </RosterList>
