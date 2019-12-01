@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
 import Home from "./pages/Home";
 import Add from "./pages/Add";
