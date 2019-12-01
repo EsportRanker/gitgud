@@ -1,6 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
-import Astralis from "../assets/Astralis.png";
 import Cards from "../components/Card";
 
 export default function Home() {

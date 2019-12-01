@@ -3,24 +3,42 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 const BurgerMenu = styled.div`
   margin: 10px;
-  width: 60px;
-  height: 45px;
+
+  width: 40px;
+  height: 20px;
   cursor: pointer;
 `;
 const Span = styled.span`
   display: block;
-  height: 9px;
+  height: 5px;
+
   width: 100%;
   background: #d3531a;
   border-radius: 9px;
   opacity: 1;
   margin-bottom: 7px;
 `;
+const ExitSpan = styled.span`
+  display: block;
+  height: 5px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 9px;
+  opacity: 1;
+  margin-bottom: 7px;
+  transform: translate(20px, 40px);
+  transform: ${({ direction }) =>
+    direction === "left"
+      ? "rotate(-45deg) translate(-8px)"
+      : "rotate(45deg) translate(-9px)"};
+`;
 const Menu = styled.div`
   position: absolute;
   background: #333;
   height: 100%;
-  width: 40%;
+
+  width: 30%;
+
   top: 0;
   right: 0;
   z-index: 9999;
@@ -36,25 +54,42 @@ const MenuContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
 
-  margin-top: 6px;
+  margin-top: 18px;
+
 `;
 function MenuBar({ onClick }) {
   return (
     <Menu>
       <MenuContentContainer>
         <BurgerMenu onClick={() => onClick()}>
-          <Span></Span>
-          <Span></Span>
-          <Span></Span>
+
+          <ExitSpan direction="left"></ExitSpan>
+
+          <ExitSpan direction="right"></ExitSpan>
         </BurgerMenu>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/add">Add</RouterLink>
+        <RouterLink
+          onClick={() => {
+            onClick();
+          }}
+          to="/"
+        >
+          Home
+        </RouterLink>
+        <RouterLink
+          to="/add"
+          onClick={() => {
+            onClick();
+          }}
+        >
+          Add
+        </RouterLink>
       </MenuContentContainer>
     </Menu>
   );
 }
 export default function HamburgerMenu() {
   const [showMenu, setShowMenu] = React.useState(false);
+
   function handleClick() {
     setShowMenu(!showMenu);
   }
