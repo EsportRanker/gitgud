@@ -98,17 +98,17 @@
   ],
   "games": [
     {
-      "name": "league",
+      "name": "LoL",
       "id": 1,
       "genre": "moba"
     },
     {
-      "name": "cs:go",
+      "name": "CS:GO",
       "id": 2,
       "genre": "fps"
     },
     {
-      "name": "hearthstone",
+      "name": "Hearthstone",
       "id": 3,
       "genre": "tcg"
     }

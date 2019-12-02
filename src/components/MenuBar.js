@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 const BurgerMenu = styled.div`
   margin: 10px;
-
   width: 40px;
   height: 20px;
   cursor: pointer;
@@ -26,22 +25,40 @@ const ExitSpan = styled.span`
   border-radius: 9px;
   opacity: 1;
   margin-bottom: 7px;
-  transform: translate(20px, 40px);
+  transform-origin: 70%;
   transform: ${({ direction }) =>
-    direction === "left"
-      ? "rotate(-45deg) translate(-8px)"
-      : "rotate(45deg) translate(-9px)"};
+    direction === "left" ? "rotate(-45deg)  " : "rotate(45deg)"};
 `;
 const Menu = styled.div`
   position: absolute;
   background: #333;
   height: 100%;
-
   width: 30%;
-
   top: 0;
   right: 0;
   z-index: 9999;
+  animation-name: fade;
+  animation-duration: 0.5s;
+  @keyframes fade {
+    0% {
+      width: ${({ state }) => {
+        if (state === true) {
+          return "0%";
+        } else {
+          return "30%";
+        }
+      }};
+    }
+    100% {
+      width: ${({ state }) => {
+        if (state === true) {
+          return "30%";
+        } else {
+          return "0%";
+        }
+      }};
+    }
+  }
 `;
 
 const RouterLink = styled(Link)`
@@ -53,18 +70,14 @@ const MenuContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  margin-top: 18px;
-
+  margin-top: 22px;
 `;
-function MenuBar({ onClick }) {
+function MenuBar({ onClick, state }) {
   return (
-    <Menu>
+    <Menu state={state}>
       <MenuContentContainer>
         <BurgerMenu onClick={() => onClick()}>
-
           <ExitSpan direction="left"></ExitSpan>
-
           <ExitSpan direction="right"></ExitSpan>
         </BurgerMenu>
         <RouterLink
@@ -104,7 +117,7 @@ export default function HamburgerMenu() {
         <Span></Span>
         <Span></Span>
       </BurgerMenu>
-      {showMenu && <MenuBar onClick={handleClick} />}
+      {showMenu ? <MenuBar onClick={handleClick} state={showMenu} /> : ""}
     </>
   );
 }
